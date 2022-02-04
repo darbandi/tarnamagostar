@@ -1,0 +1,106 @@
+.resort-details {
+  .cover {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    height: 300px;
+    opacity: 0.5;
+  }
+  .resort-item {
+    margin: 0 10%;
+  }
+  .resort-cover {
+    position: relative;
+    width: 430px;
+    img {
+      width: 430px;
+    }
+    .price {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: fit-content;
+      padding: 8px 32px;
+      background-color: orange;
+      color: white;
+      font-weight: bold;
+      font-size: 1.3rem;
+      border-radius: 0 0 0 16px;
+    }
+  }
+  .resort-gallery {
+    margin-top: 8px;
+    gap: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    img {
+      border-radius: 4px;
+      width: 100px;
+      cursor: zoom-in;
+    }
+  }
+  .title {
+    margin-top: 50px;
+    margin-bottom: 10px;
+    a {
+      color: #199da3;
+      font-weight: bold;
+      font-size: 2.5rem;
+      text-decoration: none;
+      transition: all 0.3s;
+
+      &:hover {
+        color: rgb(161, 38, 38);
+      }
+    }
+  }
+  .location {
+    color: gray;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+
+    .icon {
+      font-size: 1.2rem;
+    }
+  }
+  .description {
+    color: gray;
+    font-size: 1.2rem;
+    line-height: 1.3;
+  }
+
+  .resort-info {
+    display: flex;
+    justify-content: space-between;
+  }
+  .btn-primary {
+    display: flex;
+    margin-bottom: 20px;
+    align-items: center;
+    gap: 30px;
+    color: rgba(255, 255, 255, 0.7);
+    .icon {
+      font-size: 1rem;
+    }
+    .price {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: rgb(255, 255, 255);
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .resort-details {
+    .resort-cover {
+      width: 100%;
+      img {
+        width: 100%;
+      }      
+    }
+  }
+}

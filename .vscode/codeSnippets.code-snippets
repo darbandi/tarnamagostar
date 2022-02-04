@@ -1,0 +1,106 @@
+{
+  "function component": {
+    "prefix": "fc",
+    "body": [
+      "import \"./${TM_FILENAME_BASE/(.*)/${1:/downcase}/}.scss\";",
+      "import React from \"react\";",
+      "import PropTypes from \"prop-types\";",
+      "",
+      "const $TM_FILENAME_BASE = (props) => {",
+      "\treturn <div className=\"${TM_FILENAME_BASE/(.*)/${1:/downcase}/}\">$1</div>;",
+      "};",
+      "",
+      "$TM_FILENAME_BASE.propTypes = {};",
+      "",
+      "export default $TM_FILENAME_BASE;"
+    ],
+    "description": "function component"
+  },
+  "arrow": {
+    "prefix": "af",
+    "body": "(${1:item})=>{\n\t$0\n}",
+    "description": "افزودن arrow function"
+  },
+  "function": {
+    "prefix": "afn",
+    "body": "const $1 = (${2:item}) => {\n\t$0\n};",
+    "description": "افزودن function"
+  },
+  "context": {
+    "prefix": "ctx",
+    "body": [
+      "import { useStateContext, useDispatchContext } from \"context\";",
+      "const stateContext = useStateContext();",
+      "const dispatchContext = useDispatchContext();"
+    ],
+    "description": "افزودن کانتکست"
+  },
+  "import context state": {
+    "prefix": "ctx.s",
+    "body": ["import { useStateContext } from \"context\";", "const stateContext = useStateContext();"],
+    "description": "افزودن کانتکست"
+  },
+  "import context dispatch": {
+    "prefix": "ctx.d",
+    "body": ["import { useDispatchContext } from \"context\";", "const dispatchContext = useDispatchContext();"],
+    "description": "افزودن کانتکست"
+  },
+  "use dispatch": {
+    "prefix": "ctx.dispatch",
+    "body": "dispatchContext({ type: \"set$1\", $2: \"$3\" })",
+    "description": "افزودن کانتکست"
+  },
+  "use api": {
+    "prefix": "useApi",
+    "body": [
+      "import { useApi } from \"hooks\";",
+      "const { get, getApiParams } = useApi();",
+      "const { path, params, dataModel } = getApiParams(\"$1\");",
+      "get(path, { ${2:...params}, ${3:newParam: \"\"} }, dataModel);"
+    ],
+    "description": "افزودن api"
+  },
+  "toast": {
+    "prefix": "toast",
+    "body": [
+      "import UiSnackbar from \"ui-components/ui-snackbar/UiSnackbar\";",
+      "const { success: toastSuccess, error: toastError } = UiSnackbar.useSnackbar();"
+    ],
+    "description": "افزودن توست"
+  },
+  "permisoins.function": {
+    "prefix": "permi.function",
+    "body": [
+      "const { userPermission } = usePermission();",
+      "const { int_value_1, int_value_2, permission, str_value } = useMemo(() => userPermission(\"$1\",\"$2\"), [userPermission]);"
+    ],
+    "description": "افزودن پرمیشن از نوع فانکشن"
+  },
+  "permisoinsImport": {
+    "prefix": "permi.import",
+    "body": ["import { usePermission } from \"hooks\";"],
+    "description": "افزودن اینپورت کرن پرمیشن"
+  },
+  "debugger": {
+    "prefix": "de",
+    "body": ["debugger;"],
+    "description": "افزودن دیباگر"
+  },
+  "stringify": {
+    "prefix": "str",
+    "body": [
+      "<pre style={{ overflow: \"hidden\", direction: \"ltr\", userSelect: \"text\" }}>{JSON.stringify($1,null,2)}</pre>"
+    ],
+    "description": "چاپ جیسون"
+  },
+  "map": {
+    "prefix": "map",
+    "body": ["${1:data}?.map((${2:item,index})=>{", "\treturn($0)", "})"],
+    "description": "مپ زدن روی آرایه"
+  },
+  "cy_test": {
+    "prefix": "it",
+    "body": ["// eslint-disable-next-line jest/expect-expect","it(\"$1\", () => {\n\t$0\n});"],
+    "description": "تست نویسی"
+  }
+}

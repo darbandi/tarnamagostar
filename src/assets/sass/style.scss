@@ -1,0 +1,31 @@
+html,
+body {
+  margin: 0;
+  box-sizing: border-box;
+  background-color: #e5e5e5;
+}
+.btn-primary {
+  padding: 16px 32px;
+  background-color: #199da3;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  transition: all 0.3s;
+  font-size: 1rem;
+
+  &:hover {
+    box-shadow: 0 0 10px gray;
+    cursor: pointer;
+  }
+}
+.btn-secondary{
+  @extend .btn-primary;
+  background-color: #921414;
+}
+
+@import "./../../../node_modules/remixicon/fonts/remixicon.css";
+@import "./components/paginate";
+@import "./layout/layout";
+@import "./pages/resorts-list";
+@import "./pages/resorts-details";

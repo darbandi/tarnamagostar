@@ -1,0 +1,569 @@
+@import url(d:\Git\example\tarnama-test\tarnama-test\node_modules\remixicon\fonts\remixicon.css);
+html,
+body {
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #e5e5e5;
+}
+
+.btn-primary, .btn-secondary {
+  padding: 16px 32px;
+  background-color: #199da3;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  font-size: 1rem;
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+  -webkit-box-shadow: 0 0 10px gray;
+          box-shadow: 0 0 10px gray;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  background-color: #921414;
+}
+
+.paginate-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 20px 0;
+}
+
+.paginate-wrapper .pagination {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.paginate-wrapper .pagination li a {
+  padding: 0 5px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  margin: 0 3px;
+  min-width: 22px;
+  height: 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.paginate-wrapper .pagination li a:hover {
+  border: 1px solid #199da3;
+  border-radius: 8px;
+}
+
+.paginate-wrapper .pagination li.active a {
+  background: #199da3;
+  border-radius: 8px;
+  color: white;
+}
+
+.layout-header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  height: 68px;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 10%;
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+}
+
+.layout-header .nav-link {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 1.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.layout-header .nav-link .icon {
+  margin-right: 20px;
+}
+
+.layout-header .bucket {
+  font-size: 1.5rem;
+  position: relative;
+  text-decoration: none;
+  color: #333;
+}
+
+.layout-header .bucket .badge {
+  position: absolute;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  min-width: 10px;
+  height: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: orange;
+  color: white;
+  right: -9px;
+  top: -9px;
+  font-size: 0.7rem;
+  padding: 3px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.layout-main {
+  min-height: 100vh;
+}
+
+.layout-footer {
+  height: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #333;
+  color: white;
+}
+
+.layout-footer a {
+  color: white;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.resorts-list {
+  display: -ms-grid;
+  display: grid;
+  margin: 20px 10%;
+}
+
+.resorts-list .resort-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: white;
+  margin: 16px auto;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.resorts-list .resort-item:hover {
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.resorts-list .resort-item .resort-cover {
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 8px 0 0 8px;
+}
+
+.resorts-list .resort-item .resort-cover .resort-image {
+  height: 100%;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.resorts-list .resort-item .resort-cover .resort-image:hover {
+  height: 120%;
+}
+
+.resorts-list .resort-item .resort-data {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding-left: 16px;
+  overflow: hidden;
+  height: 200px;
+}
+
+.resorts-list .resort-item .resort-data .title a {
+  color: #199da3;
+  font-weight: bold;
+  font-size: 2rem;
+  text-decoration: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.resorts-list .resort-item .resort-data .title a:hover {
+  color: #a12626;
+}
+
+.resorts-list .resort-item .resort-data .location {
+  color: gray;
+  font-size: 0.9rem;
+}
+
+.resorts-list .resort-item .resort-data .location .icon {
+  font-size: 1.2rem;
+}
+
+.resorts-list .resort-item .resort-data .description {
+  height: 80px;
+  overflow: hidden;
+  position: relative;
+  color: gray;
+  font-size: 1.2rem;
+  margin-bottom: 0;
+}
+
+.resorts-list .resort-item .resort-data .description::after {
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(white));
+  background: linear-gradient(transparent, white);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: "";
+  height: 70px;
+  position: absolute;
+}
+
+.resorts-list .resort-item .resort-info {
+  width: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 0 20px;
+}
+
+.resorts-list .resort-item .resort-info .price {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.resorts-list .resort-item .resort-info .btn-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 10px;
+}
+
+.resorts-list .resort-item .resort-info .btn-group .btn-primary, .resorts-list .resort-item .resort-info .btn-group .btn-secondary,
+.resorts-list .resort-item .resort-info .btn-group .btn-secondary {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.resorts-list .resort-item .resort-info .btn-group .btn-primary .icon, .resorts-list .resort-item .resort-info .btn-group .btn-secondary .icon,
+.resorts-list .resort-item .resort-info .btn-group .btn-secondary .icon {
+  margin-left: 8px;
+}
+
+.resorts-list .resort-item .resort-info .btn-group .add-to-bucket {
+  border: 1px solid silver;
+  width: 46px;
+  height: 46px;
+  border-radius: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.resorts-list .resort-item .resort-info .btn-group .add-to-bucket:hover {
+  cursor: pointer;
+  color: white;
+  background-color: #199da3;
+  border-color: #199da3;
+}
+
+.resorts-list .empty-list {
+  background-color: #cbe3ff;
+  -webkit-box-shadow: 0 0 3px #63acff;
+          box-shadow: 0 0 3px #63acff;
+  padding: 16px;
+  border-radius: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.resorts-list .empty-list .icon {
+  margin-right: 10px;
+  font-size: 2rem;
+  color: #519cff;
+}
+
+.resorts-list .empty-list a {
+  margin-left: 8px;
+}
+
+.resorts-list .action {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 20px;
+}
+
+.resorts-list .action .btn-primary, .resorts-list .action .btn-secondary {
+  width: 200px;
+  color: #a6fbff;
+}
+
+.resorts-list .action .btn-primary .icon, .resorts-list .action .btn-secondary .icon {
+  margin-left: 8px;
+}
+
+.resorts-list .action .btn-primary .total, .resorts-list .action .btn-secondary .total {
+  color: white;
+  font-size: 1.5rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .resorts-list {
+    margin: 20px 5%;
+  }
+  .resorts-list .resort-item {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding-bottom: 16px;
+  }
+  .resorts-list .resort-item .resort-cover {
+    border-radius: 8px 8px 0 0;
+    width: 100%;
+  }
+  .resorts-list .resort-item .resort-cover .resort-image {
+    width: 100%;
+    height: 100%;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  .resorts-list .resort-item .resort-data {
+    padding: 0 16px;
+  }
+  .resorts-list .resort-item .resort-info {
+    width: auto;
+  }
+  .resorts-list .resort-item .resort-info .price {
+    margin-bottom: 16px;
+  }
+}
+
+.resort-details .cover {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  height: 300px;
+  opacity: 0.5;
+}
+
+.resort-details .resort-item {
+  margin: 0 10%;
+}
+
+.resort-details .resort-cover {
+  position: relative;
+  width: 430px;
+}
+
+.resort-details .resort-cover img {
+  width: 430px;
+}
+
+.resort-details .resort-cover .price {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 8px 32px;
+  background-color: orange;
+  color: white;
+  font-weight: bold;
+  font-size: 1.3rem;
+  border-radius: 0 0 0 16px;
+}
+
+.resort-details .resort-gallery {
+  margin-top: 8px;
+  gap: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.resort-details .resort-gallery img {
+  border-radius: 4px;
+  width: 100px;
+  cursor: -webkit-zoom-in;
+  cursor: zoom-in;
+}
+
+.resort-details .title {
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+
+.resort-details .title a {
+  color: #199da3;
+  font-weight: bold;
+  font-size: 2.5rem;
+  text-decoration: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.resort-details .title a:hover {
+  color: #a12626;
+}
+
+.resort-details .location {
+  color: gray;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.resort-details .location .icon {
+  font-size: 1.2rem;
+}
+
+.resort-details .description {
+  color: gray;
+  font-size: 1.2rem;
+  line-height: 1.3;
+}
+
+.resort-details .resort-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.resort-details .btn-primary, .resort-details .btn-secondary {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 30px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.resort-details .btn-primary .icon, .resort-details .btn-secondary .icon {
+  font-size: 1rem;
+}
+
+.resort-details .btn-primary .price, .resort-details .btn-secondary .price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+@media only screen and (max-width: 600px) {
+  .resort-details .resort-cover {
+    width: 100%;
+  }
+  .resort-details .resort-cover img {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=style.css.map */

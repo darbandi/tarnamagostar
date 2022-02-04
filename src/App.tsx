@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Layout from "./components/layout";
+import { Routes, Route } from "react-router-dom";
+import ResortsList from "./pages/resorts/list/ResortsList";
+import ResortDetails from "./pages/resorts/details/ResortsDetails";
+import Bucket from "./pages/bucket/Bucket";
+import NotFound from "./pages/not-found/NotFound";
+import { Provider } from "react-redux";
+import { store } from "./state/store";
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<ResortsList />} />
+          <Route path="/resorts" element={<ResortsList />} />
+          <Route path="/resort/:id" element={<ResortDetails />} />
+          <Route path="/bucket" element={<Bucket />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Layout>
+    </Provider>
   );
-}
+};
 
 export default App;

@@ -1,0 +1,67 @@
+// ----------------------------------- layout header
+.layout-header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  height: 68px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10%;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  .nav-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    .icon {
+      margin-right: 20px;
+    }
+  }
+  .bucket {
+    font-size: 1.5rem;
+    position: relative;
+    text-decoration: none;
+    color: #333;
+    .badge {
+      position: absolute;
+      width: fit-content;
+      min-width: 10px;
+      height: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: orange;
+      color: white;
+      right: -9px;
+      top: -9px;
+      font-size: 0.7rem;
+      padding: 3px;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+  }
+}
+
+// ----------------------------------- layout main
+.layout-main {
+  min-height: 100vh;
+}
+
+// ----------------------------------- layout footer
+.layout-footer {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #333;
+  color: white;
+  a {
+    color: white;
+    font-weight: bold;
+    margin-left: 5px;
+  }
+}
