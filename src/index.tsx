@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import "remixicon/fonts/remixicon.css";
 import "./assets/sass/style.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
