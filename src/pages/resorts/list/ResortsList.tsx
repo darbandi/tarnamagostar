@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import _data from "./../../../data/data.json";
 import ResortsItem from "./ResortsItem";
 import IResort from "../../../interfaces/IResort";
@@ -16,29 +16,34 @@ const ResortsList: React.FC = () => {
   const [pageCount, setPageCount] = useState(_data?.length);
   const [data, setData] = useState<IResort[]>([]);
 
-  const handleSubmit = (_pageInput: number) => {
-    scrollTop();
-    const _page = _pageInput * 10;
-    let _sortedData: IResort[] = [];
-    if (state.sorts.price) _sortedData = sortByPrice(_data, state.sorts.price);
-    if (state.sorts.title) _sortedData = sortByTitle(_data, state.sorts.title);
-    if (+state.filters.price > 0)
-      _sortedData = filterByPrice(_sortedData, +state.filters.price);
-    if (state.filters.title)
-      _sortedData = filterByTitle(_sortedData, state.filters.title);
-    setData(_sortedData?.slice(_page - 10, _page));
-    setPageCount(_sortedData?.length);
-  };
+  const handleSubmit = useCallback(
+    (_pageInput: number) => {
+      scrollTop();
+      const _page = _pageInput * 10;
+      let _sortedData: IResort[] = [];
+      if (state.sorts.price)
+        _sortedData = sortByPrice(_data, state.sorts.price);
+      if (state.sorts.title)
+        _sortedData = sortByTitle(_data, state.sorts.title);
+      if (+state.filters.price > 0)
+        _sortedData = filterByPrice(_sortedData, +state.filters.price);
+      if (state.filters.title)
+        _sortedData = filterByTitle(_sortedData, state.filters.title);
+      setData(_sortedData?.slice(_page - 10, _page));
+      setPageCount(_sortedData?.length);
+    },
+    [
+      state.sorts.price,
+      state.sorts.title,
+      state.filters.price,
+      state.filters.title,
+    ]
+  );
 
   useEffect(() => {
     handleSubmit(1);
     setPage(1);
-  }, [
-    state.sorts.price,
-    state.sorts.title,
-    state.filters.price,
-    state.filters.title,
-  ]);
+  }, [handleSubmit]);
 
   const handlePageChange = (_page: number) => {
     setPage(_page);
