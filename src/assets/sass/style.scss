@@ -19,12 +19,13 @@ body {
     cursor: pointer;
   }
 }
-.btn-secondary{
+.btn-secondary {
   @extend .btn-primary;
   background-color: #921414;
 }
 
 @import "./components/paginate";
+@import "./components/search";
 @import "./layout/layout";
 @import "./pages/resorts-list";
 @import "./pages/resorts-details";
