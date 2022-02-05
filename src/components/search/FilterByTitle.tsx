@@ -15,10 +15,11 @@ const FilterByTitle: React.FC = () => {
 
   return (
     <span className="section">
-      <label className="category-label">Title:</label>
+      <label className="category-label" htmlFor="search-input">Title:</label>
       <input
         value={title}
         type="text"
+        id="search-input"
         className="text-input"
         placeholder="search ..."
         onChange={(e) => handleChangeTitle(e.target.value)}

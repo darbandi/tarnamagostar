@@ -15,9 +15,12 @@ const FilterByPrice: React.FC = () => {
 
   return (
     <span className="section">
-      <label className="category-label">Price:</label>
+      <label className="category-label" htmlFor="number">
+        Price:
+      </label>
       <input
         value={price}
+        id="number"
         type="number"
         className="text-input"
         placeholder="from price"

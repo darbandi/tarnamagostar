@@ -38,7 +38,7 @@ const BucketList: React.FC = () => {
         </div>
       )}
       {data.map((resort: IResort) => (
-        <BucketItem {...resort} />
+        <BucketItem {...resort} key={resort.id} />
       ))}
       {total > 0 && (
         <div className="action">
